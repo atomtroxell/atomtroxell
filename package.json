@@ -1,0 +1,15 @@
+{
+  "name": "atomtroxell",
+  "version": "1.0.0",
+  "description": "<!-- **atomtroxell/atomtroxell** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
