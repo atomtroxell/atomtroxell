@@ -1,0 +1,13 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cdn-cgi/
+
+Host: https://helloatomtech.com/
+
+Sitemap: https://helloatomtech.com/sitemap.xml

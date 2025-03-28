@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "name": "atomtroxell",
+  "version": "0.0.1",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "npm run clean && eleventy --serve --watch",
+    "build": "npm run clean && eleventy",
+    "push": "npm version patch && git push",
+    "push-minor": "npm version minor && git push",
+    "push-major": "npm version major && git push"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "autoprefixer": "^10.4.2",
+    "clean-css": "^5.3.3",
+    "daisyui": "^4.12.23",
+    "eleventy-plugin-robotstxt": "^1.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.4.7",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.0.23",
+    "terser": "^5.39.0"
+  },
+  "dependencies": {
+    "atomtroxell": "file:",
+    "hello-atom-tech": "file:"
+  }
+}
