@@ -1,25 +1,41 @@
-<footer class="mt-12 border-t border-base-200">
+<footer class="relative flex-shrink-0 w-full px-2 pt-4 pb-3 mt-28 bg-dark text-cream">
+  <div class="absolute w-full pointer-events-none right-6 max-w-52 bottom-[calc(100%-16px)]">
+    <img src="/images/foot.png" class="w-full h-auto" alt="">
+  </div>
   <div class="flex flex-wrap">
     <div class="w-full md:w-1/3">
-      <p class="py-2 text-xs text-center md:py-3 text-base-content md:text-left">&copy; {% year %}
-        AtomTech
+      <p class="p-0 m-0 text-xs text-center text-base-content md:text-left">&copy; {% year %}
+        AtomTroxell
       </p>
     </div>
     <div class="flex justify-center w-full md:justify-end md:w-2/3">
-      <ul class="p-0 m-0 text-xs list-none text-base-content">
-        <li class="inline-block md:mx-2">
-          <a href="/privacy" class="inline-block py-3 px-2 hover:bg-base-content/[.06] focus:bg-base-content/[.06]">Privacy Policy</a>
+      <ul class="p-0 pt-2 m-0 text-xs list-none text-base-content">
+        <li class="inline-block px-2 m-0 md:mx-2">
+          <a href="/accessibility" class="inline-block no-underline hover:text-mustard focus:text-mustard active:text-mustard text-cream">Accessibility</a>
         </li>
-        <li class="inline-block md:mx-2">
-          <a href="/terms" class="inline-block py-3 px-2 hover:bg-base-content/[.06] focus:bg-base-content/[.06]">Terms &amp; Conditions</a>
+        <li class="inline-block px-2 m-0 md:mx-2">
+          <a href="/privacy" class="inline-block no-underline hover:text-mustard focus:text-mustard active:text-mustard text-cream">Privacy Policy</a>
         </li>
-        <li class="inline-block md:mx-2">
-          <a href="/accessibility" class="inline-block py-3 px-2 hover:bg-base-content/[.06] focus:bg-base-content/[.06]">Accessibility</a>
-        </li>
-        <li class="inline-block md:mx-2 md:mr-0">
-          <a href="/returns" class="inline-block py-3 px-2 hover:bg-base-content/[.06] focus:bg-base-content/[.06]">Returns</a>
+        <li class="inline-block px-2 m-0 md:mx-2">
+          <a href="https://helloatomtech.com" target="_blank" class="inline-block no-underline hover:text-mustard focus:text-mustard active:text-mustard text-cream">AtomTech</a>
         </li>
       </ul>
     </div>
   </div>
 </footer>
+
+<script>
+  // Select all anchor links within the .nav-main container
+  document
+    .querySelectorAll('.nav-main a[href^="#"]')
+    .forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Scroll to the target element
+        document
+          .querySelector(this.getAttribute('href'))
+          .scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
+    });
+</script>

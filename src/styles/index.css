@@ -1,3 +1,92 @@
 @tailwind base;
+/* Base styling for content elements */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply font-roboto;
+  }
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mt-6 mb-4 text-dark;
+  }
+  h1 {
+    @apply mt-0 mb-6 font-semibold text-7xl sm:text-8xl font-play;
+  }
+  .home h1,
+  .title {
+    @apply mt-0 mb-8 font-semibold text-7xl md:text-8xl lg:text-9xl font-play text-dark;
+  }
+  h2 {
+    @apply mt-0 mb-6 text-5xl italic font-black font-roboto text-charcoal;
+  }
+  h2.subheading,
+  .home h2.subheading {
+    @apply mt-0 mb-6 text-3xl sm:text-4xl italic font-black font-roboto text-charcoal;
+  }
+  .home h2 {
+    @apply mt-0 mb-6 font-semibold text-8xl font-play;
+  }
+  h3 {
+    @apply text-4xl font-play;
+  }
+  h4 {
+    @apply text-2xl font-semibold text-charcoal;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply my-4 text-xl font-roboto font-light leading-relaxed;
+  }
+
+  /* Unordered lists */
+  ul,
+  ol {
+    @apply my-4 list-disc pl-6 text-xl font-roboto font-light;
+  }
+
+  ol {
+    @apply list-decimal pl-6;
+  }
+
+  ul ul,
+  ol ul {
+    @apply list-disc pl-6;
+  }
+
+  /* Ordered lists */
+  ol ol {
+    @apply list-decimal pl-6;
+  }
+
+  /* Style for list items (applies to both ul and ol) */
+  li {
+    @apply my-2;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    @apply my-6 pl-4 border-l-4 border-mustard text-3xl font-play text-charcoal;
+  }
+
+  blockquote p {
+    @apply text-3xl leading-relaxed font-play text-charcoal;
+  }
+
+  /* Code blocks */
+  pre {
+    @apply my-6 px-4 py-2 bg-gray-100 rounded-md;
+  }
+
+  /* Anchor tags */
+  a {
+    @apply text-aura-dark underline hover:text-swamp-dark focus:text-swamp-dark;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

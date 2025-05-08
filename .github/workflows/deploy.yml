@@ -1,0 +1,86 @@
+on:
+  push:
+    branches:
+      - main
+      - staging
+
+name: 🚀 Deploy website on push
+
+jobs:
+  # Deploy to staging
+  deploy-staging:
+    name: 🎉🤞🚀 Deploy to staging
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'  # Adjust the version of Node.js if needed
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set staging environment variables
+        run: echo "SITE_URL=https://staging.atomtroxell.com" >> $GITHUB_ENV
+
+      - name: Build 11ty site
+        run: npm run build  # Ensure you have a "build" script in your package.json
+
+      - name: Debug Deployment to Staging
+        run: echo "Deploying to staging..."
+
+      - name: Deploy to staging
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 192.155.110.18
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /staging.atomtroxell.com/
+          protocol: ftp
+          port: 21
+          log-level: verbose
+
+  # Deploy to main
+  deploy-main:
+    name: 🎉🤞🚀 Deploy to main
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'  # Adjust the version of Node.js if needed
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set main environment variables
+        run: echo "SITE_URL=https://atomtroxell.com" >> $GITHUB_ENV
+
+      - name: Build 11ty site
+        run: npm run build  # Ensure you have a "build" script in your package.json
+
+      - name: Debug Deployment to Main
+        run: echo "Deploying to main..."
+
+      - name: Deploy to main
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 192.155.110.18
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /public_html/
+          protocol: ftp
+          port: 21
+          log-level: verbose

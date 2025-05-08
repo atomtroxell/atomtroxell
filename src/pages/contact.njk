@@ -1,202 +1,40 @@
----
-tag: page
-layout: layouts/default.njk
+<section class="relative min-h-screen pt-12 mt-12 bg-top bg-no-repeat bg-contain bg-divider" id="contact">
+  <h2 class="title">Contact Me</h2>
+  <p>Whether it's about your next project or just to chat, fill out the form below to get in touch with me. I'm a pretty nice guy.</p>
 
-title: Contact AtomTech |  For Tech Repair Services, Get Started Today!
-description: Contact AtomTech to schedule your tech repair appointment today. Whether you need computer tune-ups, smartphone repairs, or home security solutions, our expert team is ready to assist. Fill out our contact form to get started!
-keywords: tech repair services, schedule tech appointment, computer tune-ups, smartphone repairs, home security solutions
----
-
-<section class="w-100">
-  <h1 class="pb-2 mt-0 mb-8 text-5xl font-bold border-b-2 sr-only font-jakarta text-brand-primary border-brand-primary">Contact Me</h1>
-  <p class="mt-0 text-lg font-light text-base-content">Whether you're looking to optimize your computer's performance, fix a glitchy smartphone, or enhance your home security, AtomTech is here to help. Fill out the form below to inquire about our services or schedule an appointment for tech repair. We'll get back to you promptly to discuss your needs and provide expert solutions tailored to you.</p>
-  {# <form action="https://helloatomtech.atomtroxell.com/ftools/process.php" method="post"> #}
   <form action="/process.php" method="post" id="contactForm">
     <input type="hidden" name="honeypot"/>
     <input type="hidden" name="form_tools_form_id" value="4"/>
     <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
       <div class="sm:col-span-4 form-control">
-        <label class="text-base font-medium text-base-content" for="name">Name<span class="text-brand-primary">*</span></label>
-        <input type="text" id="name" name="name" placeholder="" class="block w-full px-4 py-3 mt-2 border rounded-lg shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary placeholder:text-base-content focus:ring-brand-primary text-base-content bg-neutral-content" required>
-        <span id="name-error" class="hidden p-2 font-semibold error text-neutral-content bg-brand-primary"></span>
+        <label class="font-serif text-base" for="name">Name<span class="text-aura-dark">*</span></label>
+        <input type="text" id="name" name="name" placeholder="" class="block w-full px-4 py-3 mt-2 bg-white border rounded-tl-lg rounded-br-lg outline-none border-charcoal hover:border-glow-dark focus:border-glow-dark placeholder:text-dark text-dark" required>
+        <span id="name-error" class="hidden p-2 font-semibold error text-aura-dark"></span>
       </div>
 
       <div class="sm:col-span-3 form-control">
-        <label class="text-base font-medium text-base-content" for="email">Email<span class="text-brand-primary">*</span></label>
-        <input type="email" id="email" name="email" placeholder="" class="block w-full px-4 py-3 mt-2 border rounded-lg shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary placeholder:text-base-content focus:ring-brand-primary text-base-content bg-neutral-content" required>
-        <span id="email-error" class="hidden p-2 font-semibold error text-neutral-content bg-brand-primary"></span>
-      </div>
-
-      <div class="sm:col-span-3 form-control">
-        <label class="text-base font-medium text-base-content" for="phone">Phone<span class="text-brand-primary">*</span></label>
-        <input type="tel" id="phone" name="phone" placeholder="" class="block w-full px-4 py-3 mt-2 border rounded-lg shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary placeholder:text-base-content focus:ring-brand-primary text-base-content bg-neutral-content" onkeyup="this.value = this.value.replace(/[^0-9-]/g, '');" maxlength="10" required>
-        <span id="phone-error" class="hidden p-2 font-semibold error text-neutral-content bg-brand-primary"></span>
-      </div>
-
-      <fieldset id="services" class="sm:col-span-6">
-        <legend class="mb-2 text-base font-medium text-base-content">How can I contact you?<span class="text-brand-primary">*</span></legend>
-
-        <div class="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
-          <div class="inline-flex items-center sm:col-span-3 md:col-span-1">
-            <label class="relative flex items-center cursor-pointer" for="methodEmail">
-              <input type="checkbox" id="methodEmail" name="contact[]" value="Email" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Email</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Email</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3 md:col-span-1">
-            <label class="relative flex items-center cursor-pointer" for="methodPhone">
-              <input type="checkbox" id="methodPhone" name="contact[]" value="Phone" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Phone</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Phone</div>
-          </div>
-        </div>
-
-        <span id="contact-error" class="hidden p-2 font-semibold error text-neutral-content bg-brand-primary"></span>
-      </fieldset>
-
-      <fieldset id="services" class="sm:col-span-6">
-        <legend class="mb-2 text-base font-medium text-base-content">How can I help?<span class="text-brand-primary">*</span></legend>
-
-        <div class="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-6">
-          <div class="inline-flex items-center sm:col-span-3 md:mb-2">
-            <label class="relative flex items-center cursor-pointer" for="service1">
-              <input type="checkbox" id="service1" name="services[]" value="Computer Tune-Ups & Enhancements" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Computer Tune-Ups &amp; Enhancements</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Computer Tune-Ups &amp; Enhancements</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3 md:mb-2">
-            <label class="relative flex items-center cursor-pointer" for="service2">
-              <input type="checkbox" id="service2" name="services[]" value="Malware & Virus Remediation" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Malware &amp; Virus Remediation</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Malware &amp; Virus Remediation</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3 md:mb-2">
-            <label class="relative flex items-center cursor-pointer" for="service3">
-              <input type="checkbox" id="service3" name="services[]" value="Home Automation & Security Solutions" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Home Automation &amp; Security Solutions</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Home Automation &amp; Security Solutions</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3 md:mb-2">
-            <label class="relative flex items-center cursor-pointer" for="service4">
-              <input type="checkbox" id="service4" name="services[]" value="Mobile Phone Updates & Repairs" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Mobile Phone Updates &amp; Repairs</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Mobile Phone Updates &amp; Repairs</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3 md:mb-2">
-            <label class="relative flex items-center cursor-pointer" for="service5">
-              <input type="checkbox" id="service5" name="services[]" value="Game Console Setup & Troubleshooting" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Game Console Setup &amp; Troubleshooting</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Game Console Setup &amp; Troubleshooting</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3 md:mb-2">
-            <label class="relative flex items-center cursor-pointer" for="service6">
-              <input type="checkbox" id="service6" name="services[]" value="Networking Solutions & Optimization" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Networking Solutions &amp; Optimization</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Networking Solutions &amp; Optimization</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3">
-            <label class="relative flex items-center cursor-pointer" for="service7">
-              <input type="checkbox" id="service7" name="services[]" value="Web Design & Development" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Web Design &amp; Development</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Web Design &amp; Development</div>
-          </div>
-
-          <div class="inline-flex items-center sm:col-span-3">
-            <label class="relative flex items-center cursor-pointer" for="service8">
-              <input type="checkbox" id="service8" name="services[]" value="Web Design & Development" class="w-5 h-5 transition-all border rounded shadow-md appearance-none cursor-pointer drop-shadow-md bg-neutral-content peer hover:shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary checked:bg-base-content checked:border-brand-primary"/>
-              <span class="absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 pointer-events-none text-neutral-content peer-checked:opacity-100 top-1/2 left-1/2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </span>
-              <span class="sr-only">Other</span>
-            </label>
-            <div class="ml-2 text-base leading-5 cursor-pointer text-base-content">Other</div>
-          </div>
-        </div>
-
-        <span id="checkboxes-error" class="hidden p-2 font-semibold error text-neutral-content bg-brand-primary"></span>
-      </fieldset>
-
-      <div class="sm:col-span-3 form-control">
-        <label class="text-base font-medium text-base-content" for="existingClient">Are you an existing client?<span class="text-brand-primary">*</span></label>
-        <select id="existingClient" name="existingClient" class="block w-full px-4 py-3 mt-2 border rounded-lg shadow-lg placeholder:text-base-content hover:border-brand-primary focus:border-brand-primary text-base-content bg-neutral-content border-base-content" required>
-          <option value="">Select one...</option>
-          <option value="No">No</option>
-          <option value="Yes">Yes</option>
-        </select>
-        <span id="email" class="existingClient-error"></span>
+        <label class="font-serif text-base" for="email">Email<span class="text-aura-dark">*</span></label>
+        <input type="email" id="email" name="email" placeholder="" class="block w-full px-4 py-3 mt-2 bg-white border rounded-tl-lg rounded-br-lg outline-none border-charcoal hover:border-glow-dark focus:border-glow-dark placeholder:text-dark text-dark" required>
+        <span id="email-error" class="hidden p-2 font-semibold error text-aura-dark"></span>
       </div>
 
       <div class="sm:col-span-6 form-control">
-        <label class="text-base font-medium text-base-content" for="message">Can you provide some details, please?<span class="text-brand-primary">*</span></label>
-        <textarea id="message" rows="5" class="block w-full px-4 py-3 mt-2 border rounded-lg shadow-lg border-base-content hover:border-brand-primary focus:border-brand-primary placeholder:text-base-content focus:ring-brand-primary text-base-content bg-neutral-content" name="message" placeholder="" required></textarea>
+        <label class="font-serif text-base" for="message">What's up?<span class="text-aura-dark">*</span></label>
+        <textarea id="message" rows="5" class="block w-full px-4 py-3 mt-2 bg-white border rounded-tl-lg rounded-br-lg outline-none border-charcoal hover:border-glow-dark focus:border-glow-dark placeholder:text-dark text-dark" name="message" placeholder="" required></textarea>
         <span id="message-error" class="existingClient-error"></span>
       </div>
 
+      <!-- ← Insert Turnstile here: -->
       <div class="sm:col-span-6">
-        <input class="text-lg font-medium btn bg-base-content text-neutral-content" type="submit" value="Submit">
+        <div class="cf-turnstile" 
+           data-sitekey="0x4AAAAAABapudvH9jcOPTWj"></div>
+        <span id="turnstile-error" class="hidden p-2 font-semibold error text-aura-dark">
+        Please complete the CAPTCHA
+      </span>
+      </div>
+
+      <div class="sm:col-span-6">
+        <input class="px-4 py-1.5 font-serif text-lg border-t border-b btn bg-cream text-charcoal border-charcoal hover:bg-mustard focus:bg-mustard hover:text-dark focus:text-dark" type="submit" value="Submit">
       </div>
     </div>
   </form>
@@ -229,20 +67,13 @@ keywords: tech repair services, schedule tech appointment, computer tune-ups, sm
         .getElementById("email")
         .value
         .trim();
-      const phone = document
-        .getElementById("phone")
-        .value
-        .trim();
-      const existingClient = document
-        .getElementById("existingClient")
-        .value
-        .trim();
-      const checkboxesContact = document.querySelectorAll('input[name="contact[]"]:checked');
-      const checkboxesServices = document.querySelectorAll('input[name="services[]"]:checked');
       const message = document
         .getElementById("message")
         .value
         .trim();
+      const turnstileResponse = document
+        .querySelector('[name="cf-turnstile-response"]')
+        .value;
 
       // Clear previous error messages
       clearErrorMessages();
@@ -257,29 +88,14 @@ keywords: tech repair services, schedule tech appointment, computer tune-ups, sm
         displayErrorMessage("email", "Please enter a valid email address");
       }
 
-      if (phone === "") {
-        isValid = false;
-        displayErrorMessage("phone", "Please enter your phone number");
-      }
-
-      if (existingClient === "") {
-        isValid = false;
-        displayErrorMessage("existingClient", "Please indicate if you're an existing client");
-      }
-
-      if (checkboxesContact.length === 0) {
-        isValid = false;
-        displayErrorMessage("contact-error", "Please select at least one contact method");
-      }
-
-      if (checkboxesServices.length === 0) {
-        isValid = false;
-        displayErrorMessage("checkboxes-error", "Please select at least one service you need help with");
-      }
-
       if (message === "") {
         isValid = false;
         displayErrorMessage("message", "Please provide some details");
+      }
+
+      if (!turnstileResponse) {
+        isValid = false;
+        displayErrorMessage('turnstile', 'Please complete the CAPTCHA');
       }
 
       return isValid;

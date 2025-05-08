@@ -7,6 +7,7 @@ import EleventyPluginRobotsTxt from "eleventy-plugin-robotstxt";
 // import htmlmin from "html-minifier"; // Import html-minifier
 import htmlmin from "html-minifier-terser";
 import { minify } from "terser";
+import markdownIt from "markdown-it";
 
 // Define robots.txt options
 /** @type {import("eleventy-plugin-robotstxt/typedefs.js").EleventyPluginRobotsTxtOptions} */
@@ -20,6 +21,7 @@ const eleventyPluginRobotsTxtOptions = {
         // { disallow: "/privacy/" },
         // { disallow: "/accessibility/" },
         { disallow: "/thank-you/" },
+        { disallow: "/styleguide/" },
         // { disallow: "/returns/" },
         { disallow: "/images/" }
       ],
@@ -33,6 +35,14 @@ export default function configureEleventy(eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`); // Year shortcode
   eleventyConfig.addGlobalData("site", {
     url: process.env.SITE_URL || "http://localhost:8080" // Fallback URL if not set
+  });
+
+  // Create a markdown-it instance
+  const markdownItInstance = new markdownIt();
+
+  // Add a filter for converting Markdown to HTML
+  eleventyConfig.addFilter("markdownify", function(content) {
+    return markdownItInstance.render(content);
   });
 
   // Copy static assets (like images) directly
