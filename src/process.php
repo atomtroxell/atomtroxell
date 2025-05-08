@@ -21,7 +21,7 @@ $_SESSION['last_submit_time'] = time(); // Update the last submission time
 $turnstile_token = $_POST['cf-turnstile-response'] ?? '';
 
 // 2) Verify with Cloudflare
-$secret = 'YOUR_TURNSTILE_SECRET_KEY';
+$secret = '0x4AAAAAABapub6PTB_psf2zjDYCpe8sPZs';
 $response = file_get_contents("https://challenges.cloudflare.com/turnstile/v0/siteverify", false, stream_context_create([
   'http' => [
     'method'  => 'POST',
@@ -76,10 +76,6 @@ $admin_message = "
 
   Name: $name
   Email: $email
-  // Phone: $phone
-  // Existing Client: $existingClient
-  // Contact Methods: $contactMethods
-  // Services Requested: $services
   Message: $message
 ";
 
