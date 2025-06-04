@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "atomtroxell",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "clean": "rimraf dist",
     "dev": "npm run clean && eleventy --serve --watch",
