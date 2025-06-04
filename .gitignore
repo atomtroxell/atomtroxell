@@ -21,3 +21,6 @@ yarn-error.log
 # Ignore backup files
 *.bak
 *.backup
+
+# Ignore dist folder
+/dist

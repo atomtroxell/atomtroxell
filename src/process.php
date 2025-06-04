@@ -42,7 +42,6 @@ if (!isset($result['success']) || $result['success'] !== true) {
   exit;
 }
 
-
 // Collect form data
 $name = trim($_POST['name']);
 $email = trim($_POST['email']);
