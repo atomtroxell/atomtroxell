@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /thank-you/
-Disallow: /styleguide/
-Disallow: /images/
