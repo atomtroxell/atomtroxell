@@ -1,13 +1,31 @@
-# AtomTech
+# AJ Troxell – Portfolio & Projects
 
-Welcome to AtomTech's repository! AtomTech is your go-to place for affordable and reliable tech services in Decatur, IL, and surrounding areas. From computer tune-ups to mobile phone repairs and web design, we're dedicated to enhancing your digital experience.
+Welcome! This repository showcases selected work by me, a frontend developer, accessibility advocate, and lifelong technology tinkerer. From internal tools at BUNN to freelance projects through AtomTech, this space reflects a passion for problem-solving, inclusive design, and modular thinking.
 
-## Features
+## 🔧 About Me
 
-- **Computer Tune-Ups & Enhancements**: Keep your devices running smoothly with our comprehensive tune-up services.
-- **Malware & Virus Remediation**: Secure your systems with expert virus removal and antivirus solutions.
-- **Home Automation & Security Solutions**: Transform your home with smart technology for enhanced security and convenience.
-- **Mobile Phone Updates & Repairs**: Get expert repairs and software updates for all types of mobile devices.
-- **Game Console Setup & Troubleshooting**: Optimize your gaming experience with our console setup and troubleshooting services.
-- **Networking Solutions & Optimization**: Ensure seamless connectivity with our tailored networking solutions.
-- **Web Design & Development**: Create a strong online presence with our custom web design and development services.
+I'm a developer with deep roots in graphic design and accessibility. My work spans public and private applications, with a focus on:
+
+- WCAG 2.2 & 508 compliance
+- HTML5, CSS/Sass/Less, JavaScript, Vue.js
+- WordPress, ExpressionEngine, Drupal, DNN, ASP.Net
+- UI/UX integrity and design consistency
+
+## 🧠 Projects
+
+This repo includes visual and code samples from collaborations with:
+
+- Memorial Health System
+- Springfield Clinic
+- Clabber Girl
+- Hanson Professional Services Inc.
+- LRS, GrowMark, ADM, and more
+
+## 💬 Contact
+
+This is a public repository. If you'd like to get in touch:
+
+- **Start a [Discussion](https://github.com/atomtroxell/atomtroxell/discussions)** in this repo
+- Or connect with me on [LinkedIn](https://www.linkedin.com/in/atomtroxell)
+
+Thanks for stopping by!
