@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22'  # Adjust the version of Node.js if needed
+          node-version: "22" # Adjust the version of Node.js if needed
 
       - name: Install dependencies
         run: npm install
@@ -29,7 +29,7 @@ jobs:
         run: echo "SITE_URL=https://staging.atomtroxell.com" >> $GITHUB_ENV
 
       - name: Build 11ty site
-        run: npm run build  # Ensure you have a "build" script in your package.json
+        run: npm run build # Ensure you have a "build" script in your package.json
 
       - name: Debug Deployment to Staging
         run: echo "Deploying to staging..."
@@ -37,11 +37,11 @@ jobs:
       - name: Deploy to staging
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: 192.155.110.18
+          server: ${{ secrets.STAGING_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /staging.atomtroxell.com/
+          server-dir: ${{ secrets.STAGING_DIR }}
           protocol: ftp
           port: 21
           log-level: verbose
@@ -59,7 +59,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '22'  # Adjust the version of Node.js if needed
+          node-version: "22" # Adjust the version of Node.js if needed
 
       - name: Install dependencies
         run: npm install
@@ -68,7 +68,7 @@ jobs:
         run: echo "SITE_URL=https://atomtroxell.com" >> $GITHUB_ENV
 
       - name: Build 11ty site
-        run: npm run build  # Ensure you have a "build" script in your package.json
+        run: npm run build # Ensure you have a "build" script in your package.json
 
       - name: Debug Deployment to Main
         run: echo "Deploying to main..."
@@ -76,11 +76,11 @@ jobs:
       - name: Deploy to main
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: 192.155.110.18
+          server: ${{ secrets.PRODUCTION_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /public_html/
+          server-dir: ${{ secrets.PRODUCTION_DIR }}
           protocol: ftp
           port: 21
           log-level: verbose

@@ -1,5 +1,5 @@
 # Ignore node_modules directory
-/node_modules
+node_modules
 node_module/
 
 # Ignore npm-debug.log files
@@ -21,3 +21,7 @@ yarn-error.log
 # Ignore backup files
 *.bak
 *.backup
+
+# Ignore dist folder
+dist
+dist/

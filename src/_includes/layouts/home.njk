@@ -12,9 +12,9 @@
         <div class="flex items-center justify-center flex-grow overflow-x-hidden">
           <main class="min-w-full p-4 md:px-12 lg:px-32">
             {{ content | safe }}
-            {% include "src/pages/work.njk" %}
-            {% include "src/pages/resume.njk" %}
-            {% include "src/pages/contact.njk" %}
+            {% include "src/pages/_work.njk" %}
+            {% include "src/pages/_resume.njk" %}
+            {% include "src/pages/_contact.njk" %}
           </main>
         </div>
       </div>
@@ -23,7 +23,7 @@
 
     <div
     id="scrollButtonWrapper"
-    class="fixed z-50 hidden transition-opacity duration-300 transform translate-y-2 opacity-0 bottom-2.5 right-4">
+    class="fixed z-50 hidden transition-opacity duration-300 transform translate-y-2 opacity-0 bottom-2.5 right-4 md:bottom-24 md:right-2">
       <button
       id="scrollButton"
       title="Scroll to top"
