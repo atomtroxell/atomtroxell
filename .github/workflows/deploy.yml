@@ -37,11 +37,11 @@ jobs:
       - name: Deploy to staging
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: 96.47.167.18
+          server: ${{ secrets.STAGING_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /staging.atomtroxell.com/
+          server-dir: ${{ secrets.STAGING_DIR }}
           protocol: ftp
           port: 21
           log-level: verbose
@@ -76,11 +76,11 @@ jobs:
       - name: Deploy to main
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: 96.47.167.18
+          server: ${{ secrets.PRODUCTION_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /public_html/
+          server-dir: ${{ secrets.PRODUCTION_DIR }}
           protocol: ftp
           port: 21
           log-level: verbose
